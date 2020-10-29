@@ -1,0 +1,72 @@
+.user_pix{
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    margin-right: 2rem;
+} 
+
+.user_tweet{
+    font-size: 1.4rem;
+}
+
+.main{
+    background-color: #fff;
+    padding: 3rem 10rem;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+}
+
+.tweet{
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.country_hashtag{
+    margin-left: 2rem;
+}
+
+.twitter-feed{
+    border-right: 1px solid red;
+    padding-right: .7rem;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.week_days{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2rem;
+}
+
+.days{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+.days h4, .temp{
+    margin-bottom: 2rem;
+}
+
+.temp{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.condition_img{
+    margin-bottom: 2rem; 
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+}
+.condition{
+    font-size: 1.2rem;
+}

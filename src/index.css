@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #f4f4f4;
+  font-size: 1.6rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  color: #333;
+}
+
+
+/* UTILITY CLASSES */
+
+.container{
+  padding: 0 15rem;
+}
+
+.center{
+  text-align: center;
+}
+
+.mb-small{
+  margin-bottom: 2rem;
+}
+
+.mb-large{
+  margin-bottom: 4rem;
+}
+
+.mt_small{
+  margin-top: 2rem;
+}
