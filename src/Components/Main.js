@@ -21,8 +21,6 @@ function Main() {
     const [wCountry, setCountry] = useState('');
     let [query, setQuery] = useState('');         
 
-
-
      useEffect(() => {
         axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}`)
         .then(res => {
