@@ -5,66 +5,68 @@ import Header from './Header';
 import axios from 'axios';
 
 function Main() {
-
-    const apiKey = '5440e3c8bc975f3bcc4b3fe3f2924eb4';
-    const [datas, setData] = useState({})
-    const [humidity, setHum] = useState('')
-    const [wind, setWind] = useState('');
-    const [city, setCity] = useState('');
-    const [temp, setTemp] = useState('');
-    const [weatherDes, setWeatherDes] = useState('')
-    let [query, setQuery] = useState('');
-
-
-   /*  res.weather.main = 'Clouds'
-    res.weather.description = 'Overcast clouds'
-    res.weather.icon = 04d
-    res.main.temp = 306
-    res.main.humidity = 47
-    res.wind.deg = 67
-    res.wind.speed = 0.6
-    res.sys.country = 'NG'
-    res.name = 'Auchi'
-    
-    
-     humidity= {datas.main.humidity}
-                wind={datas.wind.deg} 
-                city={datas.name} 
-                cur_temp={datas.main.temp} 
-                cur_tempCond = {datas.weather.description} 
-
-                 ${query} {apiKey}
-                */
-              
+/*
+   
+    const [wSpeed, setSpeed] = useState(0);
+    const [wIcon, setIcon] = useState('');
+        
+  */
+    const apiKey = '';
+    const [wHumidity, setHum] = useState(0)
+    const [wCity, setCity] = useState('');
+    const [wDeg, setDeg] = useState(0); 
+    const [wWind, setWind] = useState(0);
+    const [wTemp, setTemp] = useState(0);
+    const [wDes, setDes] = useState('');
+    const [wCountry, setCountry] = useState('');
+    let [query, setQuery] = useState('');         
 
 
 
-    useEffect(() => {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=auchi&appid=${apiKey}`)
+     useEffect(() => {
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${apiKey}`)
         .then(res => {
           const weather_datas = res.data;
-          setData(weather_datas)
-         
+          setCity(weather_datas.name);
+          setDeg(weather_datas.wind.deg);
+          setHum(weather_datas.main.humidity);
+          setTemp(weather_datas.main.temp - 273.15);
+          setDes(weather_datas.weather.description);
+          setCountry(weather_datas.sys.country);
+          setWind(weather_datas.wind.speed);
         })
         .catch((err) =>{
             console.log(err); 
         }) 
-    },[query]);
+    },[query]); 
 
     const getDatas = (e) =>{
-        console.log(datas);  
+      /* setInput(query) */
     }
-
-
+    
     return (
         <div className='container'>
             <Header 
-                humidity= {humidity}
-                wind={wind} 
-                city={city} 
-                cur_temp={temp} 
-                cur_tempCond = {weatherDes} 
-            />
+                humudity = {wHumidity}
+                wind={wWind} 
+                city={wCity}   
+                cur_temp={wTemp.toFixed(2)}
+                cur_tempCond = {wDes} 
+                country = {wCountry}
+            /> 
+          <form className='getinput' /* onSubmit={getDatas} */>
+                <input type='text' 
+                    value= {query}
+                    className='getCity'
+                    onChange= {(e)=> setQuery(e.target.value)}
+                    placeholder='Enter city name'
+                />
+             {/*    <input 
+                    type='submit'
+                    value='Search'
+                    className='btn submit'
+                /> */}
+         </form>
 
         <div className="main">
             <div className="row">
@@ -72,7 +74,7 @@ function Main() {
                     <div className="flex mb-small">
                         <i className="fab fa-twitter fa-3x"></i>
                         <h3 className="twitter-feed__header">Twitter Feed</h3>
-                        <p className="country_hashtag">#Nigeria</p>
+                        <p className="country_hashtag">#Nigeria {wCity}</p>
                     </div>
                     <div className="tweet">
                         <img className="user_pix" src={user_pix} alt="User profile pixs" />
@@ -150,15 +152,6 @@ function Main() {
                 </div>
                 </div>          
             </div>
-                <form onSubmit={getDatas}>
-                    <input type='text' 
-                            value= {query}
-                            className='getCity'
-                            onChange= {(e)=> setQuery(e.target.value)}
-                            placeholder='Enter city name'
-                    />
-                </form>
-
         </div>
     )
 }

@@ -1,6 +1,10 @@
 import React from 'react'
 import './Header.css'
-function Header({humudity, wind, city, cur_temp, cur_tempCond}) {
+
+
+function Header({humudity, wind, city, cur_temp, cur_tempCond, country}) {
+    const day = Date()
+    
     return (
         <div className="header">
             <div className="weather">
@@ -33,9 +37,9 @@ function Header({humudity, wind, city, cur_temp, cur_tempCond}) {
 
                 <div className='right'>
                     <div className="weather__country">
-                        {city.toUpperCase()}
+                        {city.toUpperCase()}, {country}
                     </div>
-                    <p className='date mt_small'> 30 Oct, 2020</p>
+                    <p className='date mt_small'> {day}</p>
                 </div>
             </div>
             <div className="bg_overlay"></div>

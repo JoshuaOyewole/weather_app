@@ -1,0 +1,29 @@
+
+lebron.jpg
+weat.png
+weather_app.jpeg
+login btn.jpg
+
+# dependencies
+/node_modules
+/.vscode
+
+/.pnp
+.pnp.js
+
+#API keys
+.env
+# production
+/build
+package-lock.json
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+

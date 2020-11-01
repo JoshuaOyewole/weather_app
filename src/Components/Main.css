@@ -12,6 +12,7 @@
 .main{
     background-color: #fff;
     padding: 3rem 10rem;
+    box-shadow: 1px .3rem 5px #823B80;
 }
 
 .flex{
@@ -69,4 +70,30 @@
 }
 .condition{
     font-size: 1.2rem;
+}
+
+.getinput{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #823B80;
+    padding: 1.5rem 1rem;
+    margin: 0 auto;
+}
+.getCity, .btn{
+    padding: 1rem 2rem;
+    outline: none;
+    border: none;
+    border-radius: 10rem;
+    margin-right: 1rem;
+}
+
+ .submit{
+    outline: 1px solid #823B80;
+    color: #0e0c0c;
+    font-weight: 700;
+} 
+
+.submit:hover{
+    background-color: #fff;
 }
