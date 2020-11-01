@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function Main() {
 
-    const apiKey = '5440e3c8bc975f3bcc4b3fe3f2924eb4';
+    const apiKey = '';
     const [datas, setData] = useState({})
     const [humidity, setHum] = useState('')
     const [wind, setWind] = useState('');
